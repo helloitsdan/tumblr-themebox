@@ -51,3 +51,7 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('web'));
 });
+
+gulp.watch('themes/**/*', [ 'default' ]).on('change', function (event) {
+  console.log("[%s] %s", event.type, event.path);
+});
