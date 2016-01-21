@@ -1,0 +1,11 @@
+main {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 $gutter;
+  max-width: $max-width;
+}
+
+section {
+  margin: 0;
+  padding: $base-section-padding 0;
+}

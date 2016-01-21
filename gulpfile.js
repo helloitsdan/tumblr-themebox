@@ -44,7 +44,10 @@ gulp.task('sass', function() {
     .pipe(debug())
     .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: bourbon.with(require('node-normalize-scss').includePaths)
+      includePaths: bourbon.with([
+        'themes',
+        require('node-normalize-scss').includePaths
+      ])
     })
     .on('error', sass.logError))
     .pipe(cssnano())
