@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Anja Elaine';
+
+  src: url('../fonts/title-webfont.eot');
+  src: url('../fonts/title-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/title-webfont.woff2') format('woff2'),
+       url('../fonts/title-webfont.woff') format('woff'),
+       url('../fonts/title-webfont.ttf') format('truetype'),
+       url('../fonts/title-webfont.svg#anja_eliane_accentnornal') format('svg');
+
+  font-weight: $font-weight-ultra;
+  font-style: normal;
+}

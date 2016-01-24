@@ -10,7 +10,7 @@ var replace = require('gulp-replace-path');
 var bourbon = require('node-bourbon');
 
 gulp.task('default',
-  [ 'scripts', 'images', 'sass', 'html' ]
+  [ 'scripts', 'images', 'sass', 'fonts', 'html' ]
 );
 
 gulp.task('scripts', function() {
@@ -32,6 +32,12 @@ gulp.task('images', function() {
       }))
       .pipe(gulp.dest('web'));
 });
+
+gulp.task('fonts', function() {
+  return gulp.src('themes/**/fonts/**/*')
+    .pipe(debug())
+    .pipe(gulp.dest('web'));
+})
 
 gulp.task('html', function() {
   return gulp.src('themes/**/*.html')

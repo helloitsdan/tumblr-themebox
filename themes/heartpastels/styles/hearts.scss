@@ -1,1 +1,118 @@
 @import "vanilla/base";
+@import "fonts";
+
+$background: #d69cd8;
+$background-dark: #ac8adf;
+$foreground: #fff;
+
+$footer-background: #a3d9d9;
+$footer-foreground: #fff;
+
+$footer-spike-size: 20px;
+
+html {
+  overflow: hidden;
+  background-attachment: fixed;
+  @include linear-gradient(0deg, $background 70%, $background-dark 100%);
+  color: $foreground;
+}
+
+body {
+  overflow: auto;
+}
+
+a {
+  color: $foreground;
+}
+
+.page {
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.spiky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+  padding: ($base-section-padding / 4) 0 $base-section-padding;
+
+  color: $footer-foreground;
+
+  .background {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: -5%;
+    right: -5%;
+    bottom: -50%;
+
+    background: $footer-background;
+
+    @include transform(rotate(-4deg) rotateZ(360deg));
+
+    // make the background not catch clicks or exist as a selectable Thinger
+    @include user-select(none);
+    pointer-events: none;
+
+    // cleans up gradient artifacts when rotated in webkit
+    -webkit-backface-visibility: hidden;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      top: -($footer-spike-size) * 2;
+      left: 0px;
+
+      width: 100%;
+      height: $footer-spike-size * 2;
+
+      @include background-image(
+        linear-gradient(-45deg, $footer-background $footer-spike-size, transparent 0),
+        linear-gradient(45deg, $footer-background $footer-spike-size, transparent 0)
+      );
+
+      background-position: left-bottom;
+      background-repeat: repeat-x;
+      background-size: ($footer-spike-size * 2) ($footer-spike-size * 2);
+    }
+  }
+
+  .dani {
+    width: 16rem;
+
+    position: absolute;
+    top: -15rem;
+    right: -2.5rem;
+
+    @include user-select(none);
+    pointer-events: none;
+
+    @media #{$mq-desktop} {
+      top: auto;
+      bottom: 0;
+      right: -7rem;
+    }
+  }
+}
+
+h1 {
+  position: relative;
+  z-index: 2;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  padding-right: 11rem;
+  
+  @media #{$mq-desktop} {
+    padding-right: 10rem;
+  }
+
+  font-family: 'Anja Elaine';
+  font-size: 4.5em;
+  text-align: right;
+  text-transform: uppercase;
+}
