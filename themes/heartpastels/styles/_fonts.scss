@@ -11,3 +11,31 @@
   font-weight: $font-weight-ultra;
   font-style: normal;
 }
+
+@font-face {
+    font-family: 'Champagne and Limousines';
+
+    src: url('../fonts/body-webfont.eot');
+    src: url('../fonts/body-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/body-webfont.woff2') format('woff2'),
+         url('../fonts/body-webfont.woff') format('woff'),
+         url('../fonts/body-webfont.ttf') format('truetype'),
+         url('../fonts/body-webfont.svg#champagne__limousinesbold') format('svg');
+
+    font-weight: $font-weight-regular;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Champagne and Limosines';
+
+    src: url('../fonts/body-bold-webfont.eot');
+    src: url('../fonts/body-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/body-bold-webfont.woff2') format('woff2'),
+         url('../fonts/body-bold-webfont.woff') format('woff'),
+         url('../fonts/body-bold-webfont.ttf') format('truetype'),
+         url('../fonts/body-bold-webfont.svg#champagne__limousinesbold') format('svg');
+         
+    font-weight: $font-weight-heavy;
+    font-style: normal;
+}

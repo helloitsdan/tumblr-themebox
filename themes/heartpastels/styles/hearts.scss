@@ -1,5 +1,5 @@
-@import "vanilla/base";
-@import "fonts";
+$header-font-family: 'Anja Elaine', sans-serif;
+$header-letter-spacing: 0.015em;
 
 $background: #d69cd8;
 $background-dark: #ac8adf;
@@ -9,16 +9,24 @@ $footer-background: #a3d9d9;
 $footer-foreground: #fff;
 
 $footer-spike-size: 20px;
+$footer-height: 6.5rem;
+
+@import "vanilla/base";
+@import "fonts";
 
 html {
   overflow: hidden;
   background-attachment: fixed;
-  @include linear-gradient(0deg, $background 70%, $background-dark 100%);
+  @include linear-gradient(0deg, $background 50%, $background-dark 100%);
   color: $foreground;
 }
 
 body {
   overflow: auto;
+  background: url("../images/bgbats.png");
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
 }
 
 a {
@@ -29,6 +37,8 @@ a {
   min-height: 100%;
   position: relative;
   overflow: hidden;
+
+  padding-bottom: $footer-height + $base-spacing;
 }
 
 .spiky-footer {
@@ -38,7 +48,7 @@ a {
   right: 0;
   z-index: 99;
 
-  padding: ($base-section-padding / 4) 0 $base-section-padding;
+  padding: ($base-section-padding / 4) 0;
 
   color: $footer-foreground;
 
@@ -52,9 +62,9 @@ a {
 
     background: $footer-background;
 
-    @include transform(rotate(-4deg) rotateZ(360deg));
+    @include transform(rotate(-3.2deg) translate3d(0,0,0));
 
-    // make the background not catch clicks or exist as a selectable Thinger
+    // make the background not exist as a selectable Thinger
     @include user-select(none);
     pointer-events: none;
 
@@ -85,8 +95,10 @@ a {
     width: 16rem;
 
     position: absolute;
-    top: -15rem;
-    right: -2.5rem;
+    z-index: 1;
+
+    top: -14rem;
+    right: -3.5rem;
 
     @include user-select(none);
     pointer-events: none;
@@ -94,25 +106,85 @@ a {
     @media #{$mq-desktop} {
       top: auto;
       bottom: 0;
-      right: -7rem;
+      right: -7.5rem;
     }
+  }
+
+  .hi-im-dani {
+    position: relative;
+    z-index: 2;
+
+    text-align: right;
+    margin: 0 auto 0;
+    padding: 0 7em 0 0;
+
+    @include transform(rotate(-3.2deg) translate3d(0,0,0));
   }
 }
 
 h1 {
-  position: relative;
-  z-index: 2;
-  max-width: $max-width;
-  margin: 0 auto;
-
-  padding-right: 11rem;
-  
-  @media #{$mq-desktop} {
-    padding-right: 10rem;
-  }
-
-  font-family: 'Anja Elaine';
-  font-size: 4.5em;
+  margin: 0;
+  line-height: 0.8;
   text-align: right;
   text-transform: uppercase;
+  white-space: nowrap;
+
+  font-size: 4rem;
+
+  @media #{$mq-desktop} {
+    font-size: 4.5rem;
+  }
+}
+
+nav {
+  position: relative;
+  z-index: 2;
+
+  font-family: "Champagne and Limousines", sans-serif;
+  font-size: $font-size-h6;
+  font-weight: $font-weight-heavy;
+  letter-spacing: 0.05em;
+  line-height: 1.62rem;
+
+  a {
+    text-decoration: none;
+
+    span {
+      display: inline-block;
+      line-height: 1.15em;
+      border-bottom: 0.125em solid;
+    }
+  }
+}
+
+.post {
+  margin: 0 auto $base-spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  img {
+    vertical-align: bottom;
+  }
+}
+
+footer {
+  padding: $base-section-padding 0;
+}
+
+.page-in-ation {
+  margin: 0 auto $base-spacing;
+
+  text-align: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include transform(rotate(-3.2deg) translate3d(0,0,0));
+
+  a {
+    margin: 0 1em;
+  }
 }
