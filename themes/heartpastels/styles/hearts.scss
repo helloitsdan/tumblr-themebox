@@ -15,18 +15,26 @@ $footer-height: 6.5rem;
 @import "fonts";
 
 html {
-  overflow: hidden;
   background-attachment: fixed;
-  @include linear-gradient(0deg, $background 50%, $background-dark 100%);
+  background-image: url("../images/bgbats.png"), linear-gradient(180deg,#ac8adf 30%,#d69cd8 65%);
+  background-size: cover;
+  background-position: top center;
+
   color: $foreground;
 }
 
-body {
-  overflow: auto;
-  background: url("../images/bgbats.png");
-  background-size: cover;
-  background-position: top center;
+/*
+// potentially dodgy scroll-jacking thinger
+// disables elastic scrolling, and also lets
+// the footer (and also me) to sit over the scrollbar
+html {
+  overflow: hidden;
+
+  body {
+    overflow: auto;
+  }
 }
+*/
 
 main {
   padding: $base-spacing;
