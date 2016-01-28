@@ -5,13 +5,23 @@ $background: #d69cd8;
 $background-dark: #ac8adf;
 $foreground: #fff;
 
+$post-background: rgba(74, 59, 95, 0.175);
+$post-foreground: #fff;
+
 $footer-background: #a3d9d9;
 $footer-foreground: #fff;
 
 $footer-spike-size: 25px;
 $footer-height: 6.5rem;
 
-$inner-content-width: 600px;
+$inner-content-width: 40em;
+
+@mixin wonky {
+  @include transform(rotate(-3.2deg) perspective(999px));
+
+  // try and clean up dodgy borders when rotating
+  @include backface-visibility(hidden);
+}
 
 @import "vanilla/base";
 @import "fonts";
@@ -25,5 +35,6 @@ $inner-content-width: 600px;
 @import "navigation-lets-chat";
 
 @import "posts";
+@import "media-wrapper";
 
 @import "pagination";

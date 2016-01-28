@@ -19,10 +19,7 @@
 
     background: $footer-background;
 
-    @include transform(rotate(-3.2deg) perspective(999px));
-
-    // try and clean up dodgy borders when rotating
-    @include backface-visibility(hidden);
+    @include wonky;
 
     // make the background not exist as a selectable Thinger
     @include user-select(none);
@@ -72,6 +69,6 @@
     margin: 0 auto 0;
     padding: 0 7em 0 0;
 
-    @include transform(rotate(-3.2deg) translate3d(0,0,0));
+    @include wonky;
   }
 }

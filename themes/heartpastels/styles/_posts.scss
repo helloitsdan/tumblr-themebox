@@ -1,5 +1,8 @@
 .post {
   margin: 0 auto $base-spacing;
+  padding: $base-spacing;
+  background: $post-background;
+  color: $post-foreground;
 
   &:last-child {
     margin-bottom: 0;
@@ -7,5 +10,55 @@
 
   img {
     vertical-align: bottom;
+  }
+
+  .media-wrapper {
+    margin: -$base-spacing;
+    margin-bottom: $base-spacing;
+
+    &:last-child {
+      margin-bottom: -$base-spacing;
+    }
+  }
+
+  footer {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* reblogged from... */
+  &.reblogged {
+    & >,
+    figcaption > {
+      p:first-child {
+        color: transparent;
+      }
+    }
+  }
+
+  a.tumblr_blog {
+    font-size: $font-size-h4;
+    font-family: $header-font-family;
+    line-height: $header-line-height;
+    text-decoration: none;
+    display: inline-block;
+
+    background: $background-dark;
+    text-transform: uppercase;
+    padding: 0.25em;
+    padding-bottom: 0.15em;
+
+    position: relative;
+    left: -0.5em;
+    bottom: -0.35em;
+
+    @include wonky;
+  }
+
+  blockquote {
+    background: $background-dark;
+    border: none;
+    margin-top: -$font-size-h4;
+    padding: $base-spacing / 2;
   }
 }
