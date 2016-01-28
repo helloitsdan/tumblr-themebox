@@ -9,3 +9,10 @@ section {
   margin: 0;
   padding: $base-section-padding 0;
 }
+
+main {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

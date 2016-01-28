@@ -97,133 +97,128 @@
       
     {block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}
       <article class="{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Date}post {/block:Date}{block:PermalinkPage}page {/block:PermalinkPage} {TagsAsClasses}">
-          {block:Quote}          
-            <header>
-              <blockquote>
-                "{Quote}"
-              </blockquote>
-            </header>
-            
-            {block:Source}
-              <p>{Source}</p>
-            {/block:Source}        
-          {/block:Quote}
+        {block:Quote}          
+          <header>
+            <blockquote>
+              "{Quote}"
+            </blockquote>
+          </header>
           
-          {block:Photoset}          
-            <figure>
-              {Photoset}
+          {block:Source}
+            <p>{Source}</p>
+          {/block:Source}        
+        {/block:Quote}
+        
+        {block:Photoset}          
+          <figure>
+            {Photoset}
 
-              {block:Caption}
-                <figcaption>
-                  {Caption}
-                </figcaption>
-              {/block:Caption}
-            </figure>
-          {/block:Photoset}
+            {block:Caption}
+              <figcaption>
+                {Caption}
+              </figcaption>
+            {/block:Caption}
+          </figure>
+        {/block:Photoset}
 
-          {block:Photo}
-            <figure>
-              <div class="media-wrapper">
-                <div class="media photo">
-                  {LinkOpenTag}
-                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
-                  {LinkCloseTag}
-                </div>
-              </div>
-
-              {block:Caption}
-                <figcaption>
-                  {Caption}
-                </figcaption>
-              {/block:Caption}
-            </figure>
-          {/block:Photo}
-  
-          {block:Video}
-            <figure>
-              <div class="media-wrapper">
-                <div class="media video">
-                  {Video-700}
-                </div>
-              </div>
-
-              {block:Caption}
-                <figcaption>
-                  {Caption}
-                </figcaption>
-              {/block:Caption}
-            </figure>
-          {/block:Video}         
-          
-          {block:Link}
-            <header>
-              <h2>
-                <a href="{URL}" {Target}>{Name}</a>
-              </h2>
-            </header>
-            
-            {block:Description}              
-              <p>{Description}</p>
-            {/block:Description}
-          {/block:Link}
-                  
-          {block:Chat}
-            <ul>
-              {block:Lines}
-                <li class="member{UserNumber}">
-                  {block:Label}<span class="label">{Label}</span>{/block:Label}
-                  {Line}
-                </li>
-              {/block:Lines}
-            </ul>
-          {/block:Chat}
-          
-          {block:Answer}
-            <header>
-              <a href="{Permalink}">
-                {Question}
-
-                <span class="asker">
-                  <img src="{AskerPortraitURL-24}" />{Asker}
-                </span>
-              </a>
-            </header>
-            
-            {Answer}
-          {/block:Answer}
-                      
-          {block:Text}
-            {block:Title}
-              <header>
-                <h2>
-                  <a href="{Permalink}">{Title}</a>
-                </h2>
-              </header>
-            {/block:Title}
-
-            {Body}
-          {/block:Text}
-
-          {block:Audio}
+        {block:Photo}
+          <figure>
             <div class="media-wrapper">
-              <div class="media audio">
-                {block:AudioEmbed}
-                  {AudioEmbed color="white"}
-                {/block:AudioEmbed}
+              <div class="media photo">
+                {LinkOpenTag}
+                  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
+                {LinkCloseTag}
               </div>
             </div>
 
             {block:Caption}
-              <p>
+              <figcaption>
                 {Caption}
-              </p>
+              </figcaption>
             {/block:Caption}
-          {/block:Audio}
-        </article>
+          </figure>
+        {/block:Photo}
 
-        <section>
-          {Replies}
-        </section>
+        {block:Video}
+          <figure>
+            <div class="media-wrapper">
+              <div class="media video">
+                {Video-700}
+              </div>
+            </div>
+
+            {block:Caption}
+              <figcaption>
+                {Caption}
+              </figcaption>
+            {/block:Caption}
+          </figure>
+        {/block:Video}         
+        
+        {block:Link}
+          <header>
+            <h2>
+              <a href="{URL}" {Target}>{Name}</a>
+            </h2>
+          </header>
+          
+          {block:Description}              
+            <p>{Description}</p>
+          {/block:Description}
+        {/block:Link}
+                
+        {block:Chat}
+          <ul>
+            {block:Lines}
+              <li class="member{UserNumber}">
+                {block:Label}<span class="label">{Label}</span>{/block:Label}
+                {Line}
+              </li>
+            {/block:Lines}
+          </ul>
+        {/block:Chat}
+        
+        {block:Answer}
+          <header>
+            <a href="{Permalink}">
+              {Question}
+
+              <span class="asker">
+                <img src="{AskerPortraitURL-24}" />{Asker}
+              </span>
+            </a>
+          </header>
+          
+          {Answer}
+        {/block:Answer}
+                    
+        {block:Text}
+          {block:Title}
+            <header>
+              <h2>
+                <a href="{Permalink}">{Title}</a>
+              </h2>
+            </header>
+          {/block:Title}
+
+          {Body}
+        {/block:Text}
+
+        {block:Audio}
+          <div class="media-wrapper">
+            <div class="media audio">
+              {block:AudioEmbed}
+                {AudioEmbed color="white"}
+              {/block:AudioEmbed}
+            </div>
+          </div>
+
+          {block:Caption}
+            <p>
+              {Caption}
+            </p>
+          {/block:Caption}
+        {/block:Audio}
         
         <footer class="postmeta">
           {block:RebloggedFrom}
