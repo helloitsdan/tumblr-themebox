@@ -1,0 +1,16 @@
+nav.page-in-ation {
+  margin: 0 auto $base-spacing;
+  font-size: $font-size-h4;
+
+  text-align: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include transform(rotate(-3.2deg) translate3d(0,0,0));
+
+  a {
+    margin: 0 0.5em;
+  }
+}

@@ -1,0 +1,13 @@
+nav.lets-chat♪ {
+  a {
+    background-image: url("../images/social-icons.png");
+    background-size: 1.5em auto;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    padding-left: 1.5em;
+  }
+
+  a.twitter { }
+  a.twitch  { background-position: 0 50% }
+  a.ask     { background-position: 0 100% }
+}

@@ -1,0 +1,25 @@
+nav {
+  position: relative;
+  z-index: 2;
+
+  font-family: "Champagne and Limousines", sans-serif;
+  font-size: $font-size-h6;
+  font-weight: $font-weight-heavy;
+  letter-spacing: 0.05em;
+  line-height: 1.62rem;
+
+  a {
+    text-decoration: none;
+    margin-right: 0.5em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    span {
+      display: inline-block;
+      line-height: 1.15em;
+      border-bottom: 0.125em solid;
+    }
+  }
+}

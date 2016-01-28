@@ -1,0 +1,17 @@
+h1 {
+  margin: 0;
+  line-height: 0.8;
+  text-align: right;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  font-size: 4rem;
+
+  @media #{$mq-desktop} {
+    font-size: 4.5rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

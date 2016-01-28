@@ -1,0 +1,11 @@
+.post {
+  margin: 0 auto $base-spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  img {
+    vertical-align: bottom;
+  }
+}

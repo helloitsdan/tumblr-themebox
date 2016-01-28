@@ -253,15 +253,17 @@
     <div class="container">
 
       <nav class="page-in-ation">
-        {block:PreviousPage}
-          <a href="{PreviousPage}">&larr;</a>
-        {/block:PreviousPage}
-       
-        <a href="#">page {CurrentPage}</a>
-        
-        {block:NextPage}
-          <a href="{NextPage}">&rarr;</a>
-        {/block:NextPage}
+        {block:Pagination}
+        {block:JumpPagination length="3"}
+          {block:CurrentPage}
+            <a class="current" href="{URL}">page {PageNumber}</span>
+          {/block:CurrentPage}
+
+          {block:JumpPage}
+            <a class="jump" href="{URL}">{PageNumber}</a>
+          {/block:JumpPage}
+        {/block:JumpPagination}
+        {/block:Pagination}
       </nav>
 
     </div>

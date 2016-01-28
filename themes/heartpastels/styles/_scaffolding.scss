@@ -1,0 +1,42 @@
+html {
+  background-attachment: fixed;
+  background-image: url("../images/bgbats.png"), linear-gradient(180deg,#ac8adf 30%,#d69cd8 65%);
+  background-size: cover;
+  background-position: top center;
+
+  color: $foreground;
+}
+
+/*
+// potentially dodgy scroll-jacking thinger
+// disables elastic scrolling, and also lets
+// the footer (and also me) to sit over the scrollbar
+html {
+  overflow: hidden;
+
+  body {
+    overflow: auto;
+  }
+}
+*/
+
+main {
+  padding: $base-spacing;
+  max-width: $inner-content-width;
+}
+
+a {
+  color: $foreground;
+}
+
+.page {
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  padding-bottom: $footer-height + $base-spacing;
+}
+
+footer {
+  padding: $base-section-padding 0;
+}

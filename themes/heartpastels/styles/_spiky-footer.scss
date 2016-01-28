@@ -1,0 +1,77 @@
+.spiky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+  padding: ($base-section-padding / 4) 0;
+
+  color: $footer-foreground;
+
+  .background {
+    z-index: -1;
+    position: absolute;
+    top: -10%;
+    left: -5%;
+    right: -5%;
+    bottom: -50%;
+
+    background: $footer-background;
+
+    @include transform(rotate(-3.2deg) perspective(999px));
+
+    // try and clean up dodgy borders when rotating
+    @include backface-visibility(hidden);
+
+    // make the background not exist as a selectable Thinger
+    @include user-select(none);
+    pointer-events: none;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      top: -($footer-spike-size * 0.8);
+      left: 0px;
+
+      width: 100%;
+      height: $footer-spike-size;
+
+      background-image: url("../images/pointy.svg");
+
+      background-position: left bottom;
+      background-repeat: repeat-x;
+      background-size: contain;
+    }
+  }
+
+  .dani {
+    width: 16rem;
+
+    position: absolute;
+    z-index: 1;
+
+    top: -14rem;
+    right: -3.5rem;
+
+    @include user-select(none);
+    pointer-events: none;
+
+    @media #{$mq-desktop} {
+      top: auto;
+      bottom: 0;
+      right: -7.5rem;
+    }
+  }
+
+  .hi-im-dani {
+    position: relative;
+    z-index: 2;
+
+    text-align: right;
+    margin: 0 auto 0;
+    padding: 0 7em 0 0;
+
+    @include transform(rotate(-3.2deg) translate3d(0,0,0));
+  }
+}
