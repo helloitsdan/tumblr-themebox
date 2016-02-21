@@ -14,7 +14,7 @@
     {block:PostSummary}{PostSummary} | {/block:PostSummary}
     {Title}
   </title>
-  
+
   {block:Description}
   <meta name="description" content="{MetaDescription}" />
   {/block:Description}
@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="{PortraitURL-128}" />
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
-  <link rel="stylesheet" href="//look.imakenicethin.gs/tumblr-themebox/heartpastels/styles/hearts.css">
+  <link rel="stylesheet" href="//themebox.imakenicethin.gs/heartpastels/styles/hearts.css">
 
   <style>
   {CustomCSS}
@@ -41,14 +41,14 @@
 
     <div class="container">
       <div class="dani">
-        <img src="//look.imakenicethin.gs/tumblr-themebox/heartpastels/images/dani.png" alt="" />
+        <img src="//themebox.imakenicethin.gs/heartpastels/images/dani.png" alt="" />
       </div>
 
       <div class="hi-im-dani">
         <h1><a href="/">{Title}</a></h1>
 
         <nav class="lets-chat♪">
-          {block:AskEnabled} 
+          {block:AskEnabled}
             <a class="ask" href="/ask">ask</a>
           {/block:AskEnabled}
 
@@ -63,14 +63,14 @@
 
     </div>
   </header>
-    
+
   <main data-page-id="{CurrentPage}">
     {block:TagPage}
       <header>
         <h2>Things tagged "{Tag}"&hellip;</h2>
       </header>
     {/block:TagPage}
-  
+
     {block:SearchPage}
       <header>
         <h2>Looking for "{SearchQuery}"&hellip;</h2>
@@ -84,22 +84,22 @@
         </p>
       </section>
     {/block:NoSearchResults}
-      
+
     {block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}
       <article class="{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Date}post {/block:Date}{block:PermalinkPage}page {/block:PermalinkPage} {TagsAsClasses}">
-        {block:Quote}          
+        {block:Quote}
           <header>
             <blockquote>
               "{Quote}"
             </blockquote>
           </header>
-          
+
           {block:Source}
             <p>{Source}</p>
-          {/block:Source}        
+          {/block:Source}
         {/block:Quote}
-        
-        {block:Photoset}          
+
+        {block:Photoset}
           <figure>
             <div class="media-wrapper">
               <div class="media photoset">
@@ -137,7 +137,7 @@
           <figure>
             <div class="media-wrapper">
               <div class="media video">
-                {Video-700}
+                {VideoEmbed-700}
               </div>
             </div>
 
@@ -147,20 +147,20 @@
               </figcaption>
             {/block:Caption}
           </figure>
-        {/block:Video}         
-        
+        {/block:Video}
+
         {block:Link}
           <header>
             <h2>
               <a href="{URL}" {Target}>{Name}</a>
             </h2>
           </header>
-          
-          {block:Description}              
+
+          {block:Description}
             <p>{Description}</p>
           {/block:Description}
         {/block:Link}
-                
+
         {block:Chat}
           <ul>
             {block:Lines}
@@ -171,7 +171,7 @@
             {/block:Lines}
           </ul>
         {/block:Chat}
-        
+
         {block:Answer}
           <header>
             <a href="{Permalink}">
@@ -182,10 +182,10 @@
               </span>
             </a>
           </header>
-          
+
           {Answer}
         {/block:Answer}
-                    
+
         {block:Text}
           {block:Title}
             <header>
@@ -213,32 +213,32 @@
             </p>
           {/block:Caption}
         {/block:Audio}
-        
-        {block:NoteCount} 
-        <footer class="postmeta">
+
+        {block:NoteCount}
           {block:RebloggedFrom}
-            <a href="{ReblogParentURL}">
-              reblogged from {ReblogParentName}
-            </a>
+            <nav class="sources">
+              <a class="reblog" href="{ReblogParentURL}">
+                reblogged from <span>{ReblogParentName}</span>
+              </a>
+
+              {block:ContentSource}
+                <a class="source" href="{SourceURL}">
+                  originally from <span>{SourceTitle}</span>
+                </a>
+              {/block:ContentSource}
+            </nav>
           {/block:RebloggedFrom}
 
-          {block:ContentSource}
-            <a href="{SourceURL}">
-              {lang:Source}: {SourceTitle}
-            </a>
-          {/block:ContentSource}
-
-          {block:HasTags}
-            {block:Tags}
-               <a href="{TagURL}">{Tag}</a>
-            {/block:Tags}
-          {/block:HasTags}
+        <footer class="postmeta">
+          <span class="separator">posted</span>
 
           {block:Date}
             <a href="{Permalink}">{TimeAgo}</a>
           {/block:Date}
 
-          <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+          <span class="separator">with</span>
+
+          <a href="{Permalink}#notes"><span>{NoteCount}</span> notes</a>
         </footer>
         {/block:NoteCount}
       </article>
@@ -248,7 +248,7 @@
           {PostNotes}
         </section>
       {/block:PostNotes}
-      
+
     {/block:Posts}
   </main>
 
@@ -260,11 +260,11 @@
         {block:Pagination}
         {block:JumpPagination length="3"}
           {block:CurrentPage}
-            <a class="current" href="{URL}">page {PageNumber}</span>
+            <a class="current" href="{URL}">page {PageNumber}</a>
           {/block:CurrentPage}
 
           {block:JumpPage}
-            <a class="jump" href="{URL}">{PageNumber}</a>
+            <a class="jump" href="{URL}">page {PageNumber}</a>
           {/block:JumpPage}
         {/block:JumpPagination}
         {/block:Pagination}
@@ -273,7 +273,7 @@
     </div>
   </footer>
   {/block:Pagination}
-    
+
 </body>
 
 </html>

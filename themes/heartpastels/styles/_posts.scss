@@ -3,6 +3,7 @@
   padding: $base-spacing;
   background: $post-background;
   color: $post-foreground;
+  position: relative;
 
   &:last-child {
     margin-bottom: 0;
@@ -14,26 +15,20 @@
 
   .media-wrapper {
     margin: -$base-spacing;
-    margin-bottom: $base-spacing;
+    margin-bottom: -($base-spacing * 1.5);
 
     &:last-child {
-      margin-bottom: -$base-spacing;
+      margin-bottom: 0;
     }
   }
 
-  footer {
-    padding: 0;
-    margin: 0;
+  figcaption {
+    position: relative;
+    z-index: 2;
   }
 
-  /* reblogged from... */
-  &.reblogged {
-    & >,
-    figcaption > {
-      p:first-child {
-        color: transparent;
-      }
-    }
+  p {
+    position: relative;
   }
 
   a.tumblr_blog {
@@ -45,11 +40,11 @@
 
     background: $background-dark;
     text-transform: uppercase;
-    padding: 0.25em;
-    padding-bottom: 0.15em;
+    padding: 0.25em 0.25em 0.07em;
+    margin-right: -2em;
 
-    position: relative;
-    left: -0.5em;
+    position: absolute;
+    left: -0.4em;
     bottom: -0.35em;
 
     @include wonky;
@@ -60,5 +55,68 @@
     border: none;
     margin-top: -$font-size-h4;
     padding: $base-spacing / 2;
+
+    a.tumblr_blog {
+      font-size: $font-size-h5;
+    }
+
+    blockquote {
+      margin-bottom: $base-spacing / 4;
+      padding-top: $base-spacing / 4;
+      padding-bottom: 0;
+      padding-right: 0;
+      border-left: $base-border-size solid rgba(0,0,0,0.2);
+    }
+  }
+}
+
+nav.sources,
+footer.postmeta {
+  a {
+    text-decoration: none;
+
+    span {
+      font-family: $header-font-family;
+      font-weight: $font-weight-heavy;
+      text-transform: uppercase;
+    }
+  }
+}
+
+footer {
+  padding: 0;
+  margin: 0;
+}
+
+nav.sources {
+  a {
+    display: block;
+
+    span {
+      line-height: 1;
+      border: none;
+    }
+  }
+}
+
+footer.postmeta {
+  font-size: 1.2em;
+  font-family: 'Champagne and Limousines Web', sans-serif;
+  font-weight: $font-weight-heavy;
+
+  @media #{$mq-desktop} {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    text-align: right;
+    margin-right: $base-spacing/2;
+
+    a {
+      white-space: nowrap;
+    }
+
+    .separator {
+      display: none;
+    }
   }
 }

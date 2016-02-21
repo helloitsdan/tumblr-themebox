@@ -12,5 +12,9 @@ nav.page-in-ation {
 
   a {
     margin: 0 0.5em;
+
+    &.current {
+      border-bottom: $base-border-size solid white;
+    }
   }
 }
