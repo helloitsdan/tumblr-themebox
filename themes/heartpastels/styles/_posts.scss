@@ -15,7 +15,7 @@
 
   .media-wrapper {
     margin: -$base-spacing;
-    margin-bottom: -($base-spacing * 1.5);
+    margin-bottom: $base-spacing;
 
     &:last-child {
       margin-bottom: 0;
@@ -68,6 +68,24 @@
       border-left: $base-border-size solid rgba(0,0,0,0.2);
     }
   }
+
+  @media #{$mq-desktop} {
+    figure {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.post.reblogged {
+  .media-wrapper {
+    margin-bottom: -($base-spacing * 1.5);
+  }
+
+  @media #{$mq-desktop} {
+    figure {
+      margin-bottom: $base-spacing;
+    }
+  }
 }
 
 nav.sources,
@@ -96,6 +114,10 @@ nav.sources {
       line-height: 1;
       border: none;
     }
+  }
+
+  .post:not(.with-caption) & {
+    margin-top: $base-spacing * 2.5;
   }
 }
 
