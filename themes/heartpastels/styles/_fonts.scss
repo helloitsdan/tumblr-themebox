@@ -1,41 +1,38 @@
 @font-face {
   font-family: 'Anja Elaine Web';
 
-  src: url('../fonts/title-webfont.eot');
-  src: url('../fonts/title-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/title-webfont.woff2') format('woff2'),
-       url('../fonts/title-webfont.woff') format('woff'),
-       url('../fonts/title-webfont.ttf') format('truetype'),
-       url('../fonts/title-webfont.svg#anja_eliane_accentnornal') format('svg');
+  src: url('../fonts/title/anja_eliane_accent002.eot');
+  src: url('../fonts/title/anja_eliane_accent002.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/title/anja_eliane_accent002.woff2') format('woff2'),
+       url('../fonts/title/anja_eliane_accent002.woff') format('woff'),
+       url('../fonts/title/anja_eliane_accent002.ttf') format('truetype');
 
   font-weight: $font-weight-ultra;
   font-style: normal;
 }
 
 @font-face {
-    font-family: 'Champagne and Limousines Web';
+  font-family: 'Champagne and Limousines Web';
 
-    src: url('../fonts/body-webfont.eot');
-    src: url('../fonts/body-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/body-webfont.woff2') format('woff2'),
-         url('../fonts/body-webfont.woff') format('woff'),
-         url('../fonts/body-webfont.ttf') format('truetype'),
-         url('../fonts/body-webfont.svg#champagne__limousinesbold') format('svg');
+  src: url('../fonts/body/champagne__limousines.eot');
+  src: url('../fonts/body/champagne__limousines.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/body/champagne__limousines.woff2') format('woff2'),
+       url('../fonts/body/champagne__limousines.woff') format('woff'),
+       url('../fonts/body/champagne__limousines.ttf') format('truetype');
 
-    font-weight: $font-weight-regular;
-    font-style: normal;
+  font-weight: $font-weight-regular;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Champagne and Limousines Web';
+  font-family: 'Champagne and Limousines Web';
 
-    src: url('../fonts/body-bold-webfont.eot');
-    src: url('../fonts/body-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/body-bold-webfont.woff2') format('woff2'),
-         url('../fonts/body-bold-webfont.woff') format('woff'),
-         url('../fonts/body-bold-webfont.ttf') format('truetype'),
-         url('../fonts/body-bold-webfont.svg#champagne__limousinesbold') format('svg');
-         
-    font-weight: $font-weight-heavy;
-    font-style: normal;
+  src: url('../fonts/body/champagne__limousines_bold.eot');
+  src: url('../fonts/body/champagne__limousines_bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/body/champagne__limousines_bold.woff2') format('woff2'),
+       url('../fonts/body/champagne__limousines_bold.woff') format('woff'),
+       url('../fonts/body/champagne__limousines_bold.ttf') format('truetype');
+
+  font-weight: $font-weight-heavy;
+  font-style: normal;
 }
